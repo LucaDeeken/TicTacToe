@@ -15,7 +15,6 @@ function playerObj () {
     }
   }();
 
-
 return {player};
 }
 
@@ -64,8 +63,6 @@ function Gameboard () {
         console.log(boardWithCellValues);
       };
 
-
-
     const markField = (rowIndex, columnIndex) => {
         const a = board[rowIndex][columnIndex].getValue();
         console.log(a);
@@ -79,9 +76,6 @@ function Gameboard () {
             alert("Spot already taken!");
         }
       }
-
-    
-
 
     function winConditions(){
         const rowSum = board[1].reduce((acc, cell) => acc + cell.getValue(), 0);
@@ -115,7 +109,6 @@ const playerObjVariable = playerObj();
 const boardState = gameBoardInstance.getBoard(); // Zugriff auf getBoard von außen
 const markField = gameBoardInstance.markField;
 const printBoard = gameBoardInstance.printBoard;
-const winning = gameBoardInstance.winConditions();
 console.log(boardState);
 
 
