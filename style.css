@@ -68,9 +68,13 @@ body {
 
 .tictactoe {
 
+    display: grid;
     width: 76px;
     height: 70px;
     border: 2px solid black;
+    font-size: 3rem;
+    place-content: center;
+    font-family: 'Public Pixel', sans-serif;
     
 }
 

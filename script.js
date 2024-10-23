@@ -8,10 +8,10 @@ function playerObj () {
   
     return function(){
   
-        if (playerScore===1) {
-            playerScore=4;
+        if (playerScore==="X") {
+            playerScore="O";
         }else{
-            playerScore=1;
+            playerScore="X";
         }
     return playerScore;
     }
@@ -75,18 +75,16 @@ function Gameboard () {
 
   function winConditions(){
     const rowSum = board[1].reduce((acc, cell) => acc + cell.getValue(), 0);
-    console.log(rowSum);
-    console.log((board[0][2].getValue())+(board[1][1].getValue())+(board[2][0].getValue()));
     if (
-      (((board[0].reduce((acc, cell) => acc + cell.getValue(), 0)))===3) || (((board[1].reduce((acc, cell) => acc + cell.getValue(), 0)))===3) || (((board[2].reduce((acc, cell) => acc + cell.getValue(), 0)))===3) ||
-      (((board[0][0].getValue())+(board[1][0].getValue())+(board[2][0].getValue()))===3) || (((board[0][1].getValue())+(board[1][1].getValue())+(board[2][1].getValue()))===3) || (((board[0][2].getValue())+(board[1][2].getValue())+(board[2][2].getValue()))===3) ||
-      (((board[0][0].getValue())+(board[1][1].getValue())+(board[2][2].getValue()))===3) ||  (((board[0][2].getValue())+(board[1][1].getValue())+(board[2][0].getValue()))===3)
+      (((board[0][0].getValue())+(board[0][1].getValue())+(board[0][2].getValue()))==="XXX") || (((board[1][0].getValue())+(board[1][1].getValue())+(board[1][2].getValue()))==="XXX") || (((board[2][0].getValue())+(board[2][1].getValue())+(board[2][2].getValue()))==="XXX") ||
+      (((board[0][0].getValue())+(board[1][0].getValue())+(board[2][0].getValue()))==="XXX") || (((board[0][1].getValue())+(board[1][1].getValue())+(board[2][1].getValue()))==="XXX") || (((board[0][2].getValue())+(board[1][2].getValue())+(board[2][2].getValue()))==="XXX") ||
+      (((board[0][0].getValue())+(board[1][1].getValue())+(board[2][2].getValue()))==="XXX") ||  (((board[0][2].getValue())+(board[1][1].getValue())+(board[2][0].getValue()))==="XXX")
         ) { 
         let a= alert("PlayerOne wins");
     } else if (
-      (((board[0].reduce((acc, cell) => acc + cell.getValue(), 0)))===12) || (((board[1].reduce((acc, cell) => acc + cell.getValue(), 0)))===12) || (((board[2].reduce((acc, cell) => acc + cell.getValue(), 0)))===12) ||
-      (((board[0][0].getValue())+(board[1][0].getValue())+(board[2][0].getValue()))===12) || (((board[0][1].getValue())+(board[1][1].getValue())+(board[2][1].getValue()))===12) || (((board[0][2].getValue())+(board[1][2].getValue())+(board[2][2].getValue()))===12) ||
-      (((board[0][0].getValue())+(board[1][1].getValue())+(board[2][2].getValue()))===12) ||  (((board[0][2].getValue())+(board[1][1].getValue())+(board[2][0].getValue()))===12)
+      (((board[0][0].getValue())+(board[0][1].getValue())+(board[0][2].getValue()))==="OOO") || (((board[1][0].getValue())+(board[1][1].getValue())+(board[1][2].getValue()))==="OOO") || (((board[2][0].getValue())+(board[2][1].getValue())+(board[2][2].getValue()))==="OOO") ||
+      (((board[0][0].getValue())+(board[1][0].getValue())+(board[2][0].getValue()))==="OOO") || (((board[0][1].getValue())+(board[1][1].getValue())+(board[2][1].getValue()))==="OOO") || (((board[0][2].getValue())+(board[1][2].getValue())+(board[2][2].getValue()))==="OOO") ||
+      (((board[0][0].getValue())+(board[1][1].getValue())+(board[2][2].getValue()))==="OOO") ||  (((board[0][2].getValue())+(board[1][1].getValue())+(board[2][0].getValue()))==="OOO")
         ) {
         let b= alert("PlayerTwo wins");
         };
@@ -116,10 +114,6 @@ function Gameboard () {
 const gameFlowVariable = gameFlow();
 const gameBoardInstance = Gameboard();
 const playerObjVariable = playerObj();
-const boardState = gameBoardInstance.getBoard(); // Zugriff auf getBoard von außen
-const markField = gameBoardInstance.markField;
-const printBoard = gameBoardInstance.printBoard;
-console.log(boardState);
 
 function gameFlow () {
 
