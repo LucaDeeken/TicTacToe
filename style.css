@@ -1,0 +1,64 @@
+html {
+    max-height: 100%;
+    max-width: 100%;
+}
+body {
+    
+}
+
+.outerLayout {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    grid-template-rows: 0.2fr 1fr;
+
+    
+   
+}
+
+.header {
+    grid-column: 2/4;
+    justify-self: center;
+    font-size: 3rem;
+}
+
+.imgContainer {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: 800px;
+    width: auto;
+    position: relative;
+
+}
+
+#gameboy {
+
+    height: auto;
+    width: 100%;
+    margin-top: 2rem;
+    justify-self: center;
+
+}
+
+#innerLayout {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.tictactoebox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 200px;
+    width: 456px;
+    height: 456px;
+    background-color: rgb(43, 133, 189);
+
+}
+
+.tictactoe {
+
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    
+}
