@@ -3,23 +3,23 @@ html {
     max-width: 100%;
 }
 body {
-    
+ 
+    background-color: rgb(248, 248, 204);
+    font-family: 'Public Pixel', sans-serif;
 }
 
 .outerLayout {
     display: grid;
-    grid-template-columns: 0.6fr 0.45fr 0.45fr 0.6fr;
-    grid-template-rows: 0.2fr 1fr;
-    gap: 3rem;
-
-    
-   
+    grid-template-columns: 0.6fr 0.5fr 0.5fr 0.6fr;
+    grid-template-rows: 0.15fr 1fr;
+    gap: 7rem;
 }
 
 .header {
     grid-column: 2/4;
     justify-self: center;
     font-size: 3rem;
+    align-self: flex-end;
 }
 
 .imgContainer {
@@ -69,17 +69,83 @@ body {
 .tictactoe {
 
     display: grid;
-    width: 76px;
-    height: 70px;
-    border: 2px solid black;
+    width: 74.5px;
+    height: 68.5px;
+    border: 3px solid black;
     font-size: 3rem;
     place-content: center;
-    font-family: 'Public Pixel', sans-serif;
+    cursor: pointer;
     
+}
+
+#innerLayout {
+    display: grid;
+}
+
+.player1 {
+    grid-row: 2/3;
+    box-shadow: 4px 4px 6px rgb(255, 76, 76);
+}
+
+.player2 {
+    grid-row:4/5;
+    box-shadow: 4px 4px 6px rgb(66, 66, 255);
+}
+
+.button {
+    grid-row:3/4;
+    margin-right: 8rem;
+    margin-left: 8rem;
+    padding: 1rem;
+    border: 4px solid black;
+    border-radius: 4px;
+    font-family: 'Public Pixel', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+fieldset {
+
+    border: 3px solid black;
+    
+    
+}
+
+input {
+    margin-top: 1.7rem;
+    font-family: 'Public Pixel', sans-serif;
+    height: 2rem;
+
+}
+
+
+form {
+    grid-template-rows: 1fr 1fr 0.3fr 1fr 1fr;
+    display: grid;
+    gap: 3.5rem;
+}
+
+.P1 {
+    color: red;
+}
+
+.P1:focus {
+
+    border: 2px solid red;
+    border-radius: 1px;
+    outline: none; 
+
+}
+
+legend {
+    text-align: center;
+}
+.P2 {
+    color: blue;
 }
 
 .eins, .vier, .sieben {
     border-left: 0px;
+    
 }
 
 .eins, .zwei, .drei {
