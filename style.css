@@ -8,8 +8,9 @@ body {
 
 .outerLayout {
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    grid-template-columns: 0.6fr 0.45fr 0.45fr 0.6fr;
     grid-template-rows: 0.2fr 1fr;
+    gap: 3rem;
 
     
    
@@ -24,9 +25,11 @@ body {
 .imgContainer {
     grid-column: 2/3;
     grid-row: 2/3;
+    min-width: 450px;
+    max-width: 450px;
     height: 800px;
-    width: auto;
     position: relative;
+    display: grid;
 
 }
 
@@ -34,8 +37,13 @@ body {
 
     height: auto;
     width: 100%;
+    min-width: 450px;
+    max-width: 450px;
     margin-top: 2rem;
     justify-self: center;
+    background-color: transparent;
+    filter:         drop-shadow(5px 5px 5px #222); 
+
 
 }
 
@@ -45,20 +53,39 @@ body {
 }
 
 .tictactoebox {
+    position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    margin-top: 200px;
-    width: 456px;
-    height: 456px;
-    background-color: rgb(43, 133, 189);
+    width: 100%;
+    top: 129px;
+    max-width: 234px;
+    max-height: 216px;
+    justify-self: center;
+    background-color: rgb(56, 89, 50);
 
 }
 
 .tictactoe {
 
-    width: 150px;
-    height: 150px;
-    border: 1px solid black;
+    width: 76px;
+    height: 70px;
+    border: 2px solid black;
     
+}
+
+.eins, .vier, .sieben {
+    border-left: 0px;
+}
+
+.eins, .zwei, .drei {
+    border-top: 0px;
+}
+
+.drei, .sechs, .neun {
+    border-right: 0px;
+}
+
+.sieben, .acht, .neun {
+    border-bottom: 0px;
 }
