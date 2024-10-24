@@ -8,20 +8,20 @@
     <link href="https://fonts.cdnfonts.com/css/public-pixel" rel="stylesheet">
 </head>
 <body>
+    <div class="header">TICTACTOE</div>
     <div class="outerLayout">
-        <div class="header">TICTACTOE</div>
         <div class="imgContainer">
             <img src="images/gameboy.png" alt="simplified picture of a gameboy" id="gameboy">
-            <div class="tictactoebox">
-                <div class="tictactoe eins" data-row="0" data-column="0"></div>
-                <div class="tictactoe zwei" data-row="0" data-column="1"></div>
-                <div class="tictactoe drei" data-row="0" data-column="2"></div>
-                <div class="tictactoe vier" data-row="1" data-column="0"></div>
-                <div class="tictactoe fünf" data-row="1" data-column="1"></div>
-                <div class="tictactoe sechs" data-row="1" data-column="2"></div>
-                <div class="tictactoe sieben" data-row="2" data-column="0"></div>
-                <div class="tictactoe acht" data-row="2" data-column="1"></div>
-                <div class="tictactoe neun" data-row="2" data-column="2"></div>
+            <div class="tictactoebox"  >
+                <div class="tictactoe eins hidden" data-row="0" data-column="0"></div>
+                <div class="tictactoe zwei hidden" data-row="0" data-column="1"></div>
+                <div class="tictactoe drei hidden" data-row="0" data-column="2"></div>
+                <div class="tictactoe vier hidden" data-row="1" data-column="0"></div>
+                <div class="tictactoe fünf hidden" data-row="1" data-column="1"></div>
+                <div class="tictactoe sechs hidden" data-row="1" data-column="2"></div>
+                <div class="tictactoe sieben hidden" data-row="2" data-column="0"></div>
+                <div class="tictactoe acht hidden" data-row="2" data-column="1"></div>
+                <div class="tictactoe neun hidden" data-row="2" data-column="2"></div>
             </div>
         </div>
         
@@ -29,27 +29,47 @@
 
         <div id="innerLayout">
 
-            <form action="">
+            <form onsubmit="handleSubmit(event)" id="myForm">
                 <fieldset class="player1">
-                    <legend>Enter Name Player One!</legend>
-                    <label for="name" class="P1">P1:</label>
-                    <input type="text" id="name" class="P1">
+                    <legend>Enter Name, Player One!</legend>
+                    <label for="nameP1" class="P1">P1:</label>
+                    <input type="text" id="nameP1" class="P1" required>
                 </fieldset>
             
                 <fieldset class="player2">
-                    <legend>Enter Name Player Two!</legend>
-                    <label for="name" class="P2">P2:</label>
-                    <input type="text" id="name" class="P2">
+                    <legend>Enter Name, Player Two!</legend>
+                    <label for="nameP2" class="P2">P2:</label>
+                    <input type="text" id="nameP2" class="P2" required>
                 </fieldset> 
                 
-                <button type="submit" class="button">Play!</button>
+                <button type="submit" value="absenden" class="button" id="go">Play!</button>
             </form>
 
-
+            <table class="hidden" id="table">
+                
+                <tr>
+                <th id="player1Name">P1</th>
+                <th id="player2Name">P2</th>
+                </tr>
+                <tr>
+                    <td class="td1" id="pointsP1">0</td>
+                    <td class="td2" id="pointsP2">0</td>
+                </tr>
+                <tr>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                </tr>
+                <tr>
+                    <td class="td1"></td>
+                    <td class="td2"></td>
+                </tr>
+                <div class="hiddenWon">
+                    <caption id="captP1" class="hiddenWon">Player 1</caption> 
+                    <caption id="textunderWon" class="hiddenWon"> won the Game!</caption>
+                </div>
+            </table>
         </div>
-
     </div>
-
     <script src="script.js" defer></script>
 </body>
 </html>
