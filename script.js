@@ -9,7 +9,7 @@ const tablePlayer1Name = document.getElementById("player1Name");
 const tablePlayer2Name = document.getElementById("player2Name");
 const PointsP1 = document.getElementById("pointsP1");
 const PointsP2 = document.getElementById("pointsP2");
-
+const resetBtn = document.getElementById("resetbutton")
 
 Form.addEventListener("submit", (event) => playerObjVariable.handleSubmit(event));
 
@@ -74,14 +74,17 @@ function Gameboard () {
     gameFlowVariable.resetGame();
   }
 
+  resetBtn.addEventListener("click", () => {
+    reset();
+    printBoard();
+  })
+
   function Cell() {
     let value = undefined;
-    // Accept a player's token to change the value of the cell
     const addToken = (player) => {
       value = player;
       return value
     };
-    // How we will retrieve the current value of this cell through closure
     const getValue = () => value;  
     return {
       addToken,
@@ -127,22 +130,25 @@ function Gameboard () {
       (((board[0][0].getValue())+(board[1][0].getValue())+(board[2][0].getValue()))==="XXX") || (((board[0][1].getValue())+(board[1][1].getValue())+(board[2][1].getValue()))==="XXX") || (((board[0][2].getValue())+(board[1][2].getValue())+(board[2][2].getValue()))==="XXX") ||
       (((board[0][0].getValue())+(board[1][1].getValue())+(board[2][2].getValue()))==="XXX") ||  (((board[0][2].getValue())+(board[1][1].getValue())+(board[2][0].getValue()))==="XXX")
         ) { 
+        resetBtn.classList.remove("hiddenWon");
         for (let i=0; i<caption.length;i++)
           caption[i].classList.remove("hiddenWon");
         captP1.textContent=players.P1.name;
         captP1.style.color="red";
         score();
-        PointsP1.textContent=scorePlayerA;
+        reset();
     } else if (
       (((board[0][0].getValue())+(board[0][1].getValue())+(board[0][2].getValue()))==="OOO") || (((board[1][0].getValue())+(board[1][1].getValue())+(board[1][2].getValue()))==="OOO") || (((board[2][0].getValue())+(board[2][1].getValue())+(board[2][2].getValue()))==="OOO") ||
       (((board[0][0].getValue())+(board[1][0].getValue())+(board[2][0].getValue()))==="OOO") || (((board[0][1].getValue())+(board[1][1].getValue())+(board[2][1].getValue()))==="OOO") || (((board[0][2].getValue())+(board[1][2].getValue())+(board[2][2].getValue()))==="OOO") ||
       (((board[0][0].getValue())+(board[1][1].getValue())+(board[2][2].getValue()))==="OOO") ||  (((board[0][2].getValue())+(board[1][1].getValue())+(board[2][0].getValue()))==="OOO")
         ) {
+        resetBtn.classList.remove("hiddenWon");
         for (let i=0; i<caption.length;i++)
           caption[i].classList.remove("hiddenWon");
         captP1.textContent=players.P2.name;
         captP1.style.color="blue";
         score();
+        reset();
         };
   }
 
@@ -174,13 +180,8 @@ function Gameboard () {
       });
     }
   })
-  
   return {printBoard, getBoard, winConditions, reset, init, score}
 };
-
-const gameFlowVariable = gameFlow();
-const gameBoardInstance = Gameboard();
-const playerObjVariable = playerObj();
 
 function gameFlow () {
 
@@ -199,3 +200,7 @@ function gameFlow () {
   };
   return {endGame, resetGame};
 }
+
+const gameFlowVariable = gameFlow();
+const gameBoardInstance = Gameboard();
+const playerObjVariable = playerObj();
