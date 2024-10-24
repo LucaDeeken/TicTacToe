@@ -6,7 +6,7 @@ body {
     display: grid;
     background-color: rgb(249, 243, 214);
     font-family: 'Public Pixel', sans-serif;
-    grid-template-rows: 0.1fr 1fr;
+    grid-template-rows: 0.07fr 1fr;
 }
 
 .outerLayout {
@@ -21,7 +21,7 @@ body {
     justify-self: center;
     font-size: 3rem;
     align-self: flex-end;
-    margin-top: 4rem;
+    margin-top: 1.5rem;
 }
 
 .imgContainer {
