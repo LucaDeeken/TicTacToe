@@ -33,13 +33,13 @@
                 <fieldset class="player1">
                     <legend>Enter Name, Player One!</legend>
                     <label for="nameP1" class="P1">P1:</label>
-                    <input type="text" id="nameP1" class="P1" required>
+                    <input type="text" id="nameP1" class="P1" maxlength="10" required>
                 </fieldset>
             
                 <fieldset class="player2">
                     <legend>Enter Name, Player Two!</legend>
                     <label for="nameP2" class="P2">P2:</label>
-                    <input type="text" id="nameP2" class="P2" required>
+                    <input type="text" id="nameP2" class="P2" maxlength="10" required>
                 </fieldset> 
                 
                 <button type="submit" value="absenden" class="button" id="go">Play!</button>
@@ -66,8 +66,10 @@
                 <div class="hiddenWon">
                     <caption id="captP1" class="hiddenWon">Player 1</caption> 
                     <caption id="textunderWon" class="hiddenWon"> won the Game!</caption>
+                    <caption id="reset">
+                        <button id="resetbutton" class="hiddenWon">new Round!</button>
+                    </caption>
                 </div>
-                <button id="resetbutton" class="hiddenWon">new Round!</button>
             </table>
         </div>
     </div>
