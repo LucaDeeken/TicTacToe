@@ -157,7 +157,6 @@ function Gameboard () {
     leftLayout.classList.add("hidden");
     table.classList.remove("hidden");
     const players = playerObjVariable.getPlayers();
-    console.log(players);
     tablePlayer1Name.textContent=players.P1.name;
     tablePlayer2Name.textContent=players.P2.name;
     for(let i=0; i<tictactoe.length;i++) {
@@ -192,7 +191,6 @@ function gameFlow () {
   const endGame = function() {
 
     roundsLeftToPlay-=1;
-    console.log(roundsLeftToPlay);
     if (roundsLeftToPlay===0) {
       alert("Spiel vorbei!");
       resetBtn.classList.remove("hiddenWon");
