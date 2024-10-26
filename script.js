@@ -194,7 +194,8 @@ function gameFlow () {
     roundsLeftToPlay-=1;
     console.log(roundsLeftToPlay);
     if (roundsLeftToPlay===0) {
-      alert("Spiel vorbei!")
+      alert("Spiel vorbei!");
+      resetBtn.classList.remove("hiddenWon");
     };
     return roundsLeftToPlay;
   };
